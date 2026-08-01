@@ -1397,6 +1397,10 @@
       font-weight: 500
     }
 
+    .read-more-btn {
+      display: none;
+    }
+
     /* ============ responsive ============ */
     @media (max-width:920px) {
       .rail {
@@ -1444,6 +1448,42 @@
         .status {
           display: none;
         }
+      }
+
+      .project-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 8px !important;
+      }
+
+      .project-desc.expanded {
+        display: block;
+        overflow: visible;
+      }
+
+      .read-more-btn {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--amber);
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 6px 0;
+        outline: none;
+        z-index: 5;
+        position: relative;
+        transition: opacity 0.2s ease;
+      }
+
+      .read-more-btn:hover {
+        opacity: 0.8;
       }
 
       .topbar {
@@ -1884,7 +1924,7 @@
                 View on GitHub
               </a>
             </div>
-            <p style="color:#aaa; font-size:16px; margin:0; line-height:1.6; position:relative; z-index:2;">
+            <p class="project-desc" style="color:#aaa; font-size:16px; margin:0; line-height:1.6; position:relative; z-index:2;">
               PlastiTrack is a personal project I created after seeing how plastic waste is often poorly managed in my
               community. Although many people are willing to recycle, there is no simple, organized way to connect
               them with waste collectors, resulting in recyclable plastics ending up in dumpsites or the environment.
@@ -1895,6 +1935,7 @@
               recycling easier for everyone involved, PlastiTrack aims to reduce plastic pollution, increase recycling
               rates, and contribute to building cleaner, healthier, and more sustainable communities.
             </p>
+            <button class="read-more-btn">Read More</button>
           </div>
 
           <!-- Project 2 -->
@@ -1913,9 +1954,10 @@
                 Visit Website
               </a>
             </div>
-            <p style="color:#aaa; font-size:16px; margin:0; line-height:1.6; position:relative; z-index:2;">
+            <p class="project-desc" style="color:#aaa; font-size:16px; margin:0; line-height:1.6; position:relative; z-index:2;">
               Collaborated with the lead designer to shape the UX/UI quality and led a team of developers in building Workmerate ERP—a comprehensive Enterprise Resource Planning & Financial Management platform. Engineered specifically to comply with the Nigeria Tax Act (NTA) 2025, the system automates tax accounting and enables seamless real-time data migration with tax authorities ahead of the 2026 compliance mandate. The platform consolidates core operational workflows—including double-entry accounting ledgers, automated payroll, inventory management, and multi-tenant billing—into a secure, high-performance web interface designed for business-critical scalability.
             </p>
+            <button class="read-more-btn">Read More</button>
           </div>
 
         </div>
@@ -2020,6 +2062,17 @@
         }
       });
     }
+
+    // Read More / Less toggle for mobile project cards
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const desc = btn.previousElementSibling;
+        if (desc && desc.classList.contains('project-desc')) {
+          const isExpanded = desc.classList.toggle('expanded');
+          btn.textContent = isExpanded ? 'Read Less' : 'Read More';
+        }
+      });
+    });
   </script>
 </body>
 
