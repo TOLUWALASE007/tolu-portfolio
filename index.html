@@ -1040,7 +1040,7 @@
 
     .craft-split {
       display: grid;
-      grid-template-columns: 1fr 1px 1fr;
+      grid-template-columns: 1fr 1px 1.05fr 1px 1.05fr;
       gap: 0;
       align-items: stretch
     }
@@ -1050,11 +1050,16 @@
     }
 
     .craft-col.design {
-      padding-right: 64px
+      padding-right: 48px
     }
 
     .craft-col.eng {
-      padding-left: 64px;
+      padding: 8px 48px;
+      margin-top: 52px
+    }
+
+    .craft-col.agents {
+      padding-left: 48px;
       margin-top: 52px
     }
 
@@ -1069,11 +1074,29 @@
       left: 50%;
       transform: translateX(-50%);
       background: var(--espresso);
-      padding: 14px 0;
+      padding: 14px 6px;
       font-family: 'Cormorant';
       font-style: italic;
       font-size: 34px;
       color: var(--amber)
+    }
+
+    @media (max-width: 1200px) and (min-width: 921px) {
+      .craft-col.design {
+        padding-right: 28px;
+      }
+      .craft-col.eng {
+        padding: 8px 28px;
+      }
+      .craft-col.agents {
+        padding-left: 28px;
+      }
+      .craft-col .tool .t-name {
+        font-size: 23px;
+      }
+      .craft-col .tool .t-meta {
+        font-size: 11.5px;
+      }
     }
 
     .craft-col .ch {
@@ -1640,9 +1663,11 @@
       }
 
       .craft-col.design,
-      .craft-col.eng {
+      .craft-col.eng,
+      .craft-col.agents {
         padding: 36px 0;
-        border-top: 1px solid var(--line)
+        border-top: 1px solid var(--line);
+        margin-top: 0 !important;
       }
 
       .craft-foot .big,
@@ -1858,8 +1883,7 @@
         <div class="sec-head rv"><span class="sec-num">03</span><span class="sec-kicker">The Craft</span></div>
         <div class="grid12 craft-head" style="margin-top:30px">
           <h2 class="rv">Fluent in two languages — <em>design &amp; code.</em></h2>
-          <p class="note rv rv-d2">I move between the canvas and the codebase without a hand-off. What I design, I can
-            build.</p>
+          <p class="note rv rv-d2">I move between the canvas and the codebase without a hand-off — amplified by AI coding agents to build, refactor, and ship at velocity.</p>
         </div>
 
         <div class="craft-split rv">
@@ -1888,6 +1912,17 @@
                 APIs</span></div>
             <div class="tool"><span class="t-name">Tailwind CSS</span><span class="t-meta">My styling shorthand</span>
             </div>
+          </div>
+          <div class="craft-divider"><span class="amp">+</span></div>
+          <div class="craft-col agents">
+            <div class="ch"><span class="n">C</span>
+              <h3>AI Agents<span>Autonomous velocity</span></h3>
+            </div>
+            <div class="tool"><span class="t-name">Cursor</span><span class="t-meta">Agentic IDE &amp; codebase reasoning</span></div>
+            <div class="tool"><span class="t-name">Claude Code</span><span class="t-meta">Terminal agent &amp; deep refactoring</span></div>
+            <div class="tool"><span class="t-name">Codex</span><span class="t-meta">Autonomous code &amp; logic synthesis</span></div>
+            <div class="tool"><span class="t-name">GitHub Copilot</span><span class="t-meta">Predictive flow &amp; pair programming</span></div>
+            <div class="tool"><span class="t-name">Windsurf</span><span class="t-meta">Cascade flow &amp; multi-file editing</span></div>
           </div>
         </div>
 
@@ -1956,6 +1991,28 @@
             </div>
             <p class="project-desc" style="color:#aaa; font-size:16px; margin:0; line-height:1.6; position:relative; z-index:2;">
               Collaborated with the lead designer to shape the UX/UI quality and led a team of developers in building Workmerate ERP—a comprehensive Enterprise Resource Planning & Financial Management platform. Engineered specifically to comply with the Nigeria Tax Act (NTA) 2025, the system automates tax accounting and enables seamless real-time data migration with tax authorities ahead of the 2026 compliance mandate. The platform consolidates core operational workflows—including double-entry accounting ledgers, automated payroll, inventory management, and multi-tenant billing—into a secure, high-performance web interface designed for business-critical scalability.
+            </p>
+            <button class="read-more-btn">Read More</button>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="ap-card rv rv-d3">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; position:relative; z-index:2;">
+              <h4 style="font-size:24px; margin:0;">McSportng</h4>
+              <a href="https://mc-sportng.vercel.app" target="_blank"
+                style="display:flex; align-items:center; gap:8px; color:#fff; font-size:14px; font-weight:600; padding:8px 18px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:30px; text-decoration:none; transition:all 0.3s ease;"
+                onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.style.borderColor='rgba(255,255,255,0.4)';"
+                onmouseout="this.style.background='rgba(255,255,255,0.08)'; this.style.borderColor='rgba(255,255,255,0.2)';">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Visit Website
+              </a>
+            </div>
+            <p class="project-desc" style="color:#aaa; font-size:16px; margin:0; line-height:1.6; position:relative; z-index:2;">
+              As the UI/UX Designer on McSportng, I collaborated with the engineering team to design and build an intuitive, high-performance web platform that empowers athletes to track sport-specific performance sessions, analyze longitudinal trends, and share verified digital stat cards with coaches and scouts. The platform integrates comprehensive competition logs, video uploads, premium verification badges, adaptive metric tracking, and AI-driven performance comparisons to showcase athlete growth, improve decision-making, and unlock career opportunities in sports.
             </p>
             <button class="read-more-btn">Read More</button>
           </div>
